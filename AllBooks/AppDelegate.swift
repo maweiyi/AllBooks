@@ -17,7 +17,48 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        self.window?.backgroundColor = UIColor.whiteColor()
+        //let viewController = ViewController()
+        //self.window?.rootViewController = viewController
+        self.setupTabBarController()
+        self.window?.makeKeyAndVisible()
+        
         return true
+    }
+    
+    func setupTabBarController() {
+        
+        
+        let selectionViewController = SelectionViewController()
+        //let selectNav = UINavigationController()
+        //selectNav.viewControllers = [selectionViewController]
+        
+        
+        let discoverViewController = DiscoverViewController()
+        //let discovNav = UINavigationController()
+        //discovNav.viewControllers = [discoverViewController]
+        
+        let searchViewController = SearchViewController()
+        //let searchNav = UINavigationController()
+        //searchNav.viewControllers = [searchViewController]
+        
+        
+        let tabBarController = MWYUITabBarController()
+        self.window?.rootViewController = tabBarController
+        
+        let tabBarItem1 = UITabBarItem(title: "精选", image: UIImage(named: "selection"), tag: 0)
+        let tabBarItem2 = UITabBarItem(title: "发现", image: UIImage(named: "discover"), tag: 1)
+        let tabBarItem3 = UITabBarItem(title: "搜索", image: UIImage(named: "search"), tag: 2)
+        
+        selectionViewController.tabBarItem = tabBarItem1
+        discoverViewController.tabBarItem = tabBarItem2
+        searchViewController.tabBarItem = tabBarItem3
+        tabBarController.viewControllers = [selectionViewController, discoverViewController, searchViewController]
+        //tabBarController.tabBar.items = [tabBarItem1, tabBarItem2, tabBarItem3]
+        
+        
+        
     }
 
     func applicationWillResignActive(application: UIApplication) {
