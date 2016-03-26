@@ -11,8 +11,14 @@
 import UIKit
 import MJRefresh
 import MBProgressHUD
+import Alamofire
+
 
 class SelectionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    var jsonDictionary: NSDictionary = [:]
+    var numOfCount: NSInteger = 1
+    var selectionModel: SelectionModel = SelectionModel()
     
     let navbar: UINavigationBar = UINavigationBar()
     let tableView: UITableView = UITableView()
@@ -20,7 +26,7 @@ class SelectionViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "ID")
+        tableView.registerClass(BookCell.self, forCellReuseIdentifier: "ID")
         tableView.delegate = self
         tableView.dataSource = self
 
@@ -44,7 +50,7 @@ class SelectionViewController: UIViewController, UITableViewDataSource, UITableV
     
        // self.tableView.mj_header.beginRefreshing()
         NSTimer.scheduledTimerWithTimeInterval(5,
-            target:self,selector:Selector("tickDown"),
+            target:self,selector:#selector(SelectionViewController.tickDown),
             userInfo:nil,repeats:true)
         
         
@@ -89,7 +95,6 @@ class SelectionViewController: UIViewController, UITableViewDataSource, UITableV
         
     }
     
-    
     func setUpTableViewUI() {
         //tableView.backgroundColor = UIColor.redColor()
         self.view.addSubview(tableView)
@@ -105,6 +110,10 @@ class SelectionViewController: UIViewController, UITableViewDataSource, UITableV
         
     }
     
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 100.0
+    }
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -113,16 +122,25 @@ class SelectionViewController: UIViewController, UITableViewDataSource, UITableV
         return 5
     }
     
+    
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ID", forIndexPath: indexPath) 
-        cell.textLabel?.text = "Hello World!"
+        let cell: BookCell = tableView.dequeueReusableCellWithIdentifier("ID", forIndexPath: indexPath) as! BookCell
+        //cell.textLabel?.text = "Hello World!"
+        cell.bookImageView.image = UIImage(named: "book")
+        cell.bookTitle.font = UIFont.systemFontOfSize(13)
+        cell.bookTitle.text = "Building Network and Servers Using Beaglebone"
+        cell.bookAuthor.font = UIFont.systemFontOfSize(10)
+        cell.bookAuthor.text = "Bill Pretty, Glenn Vander Veer"
+        cell.bookSize.font = UIFont.systemFontOfSize(10)
+        cell.bookSize.text = "17.7MB"
         return cell
     }
     
     func loadNewData() {
         
         //放置网络请求，AFNetworking
-        let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        /*let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         hud.color = UIColor(red: 200/255, green: 200/255, blue: 200/255, alpha: 1.0)
         
         
@@ -134,18 +152,28 @@ class SelectionViewController: UIViewController, UITableViewDataSource, UITableV
         }*/
         
         NSTimer.scheduledTimerWithTimeInterval(5,
-            target:self,selector:Selector("tickDown1"),
-            userInfo:nil,repeats:true)
+            target:self,selector:#selector(SelectionViewController.tickDown1),
+            userInfo:nil,repeats:true)*/
+        
+        Alamofire.request(.GET, "http://127.0.0.1:3000/api/selection", parameters: ["id": self.numOfCount], encoding: .URL, headers: nil).responseJSON(completionHandler:{ response in
+            //print(response.request)
+            //print(response.response)
+            if let JSON = response.result.value {
+            //print("JSON: \(JSON)")
+                self.jsonDictionary = JSON as! NSDictionary
+            }
+            
+            print(self.jsonDictionary["rows"]![0]["bookFileSiz"])
+            })
         
         
         
     }
-    
-    func tickDown1() {
+    /*func tickDown1() {
         
         MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
         
-    }
+    }*/
     
     /*
     // MARK: - Navigation
