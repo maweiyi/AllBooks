@@ -12,6 +12,7 @@
 		E41E5BCC1C98337A005EB9E6 /* 简瘦金书.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E41E5BCB1C98337A005EB9E6 /* 简瘦金书.ttf */; };
 		E4A3C8921CA4CC4F00D72E5B /* SelctionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A3C8911CA4CC4F00D72E5B /* SelctionModel.swift */; };
 		E4A3C8981CA4EB9B00D72E5B /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A3C8971CA4EB9B00D72E5B /* BookCell.swift */; };
+		E4B5EFE41CA8BFEB008F2AC7 /* SelectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B5EFE31CA8BFEB008F2AC7 /* SelectDetailViewController.swift */; };
 		E4B9CB5C1C96603F00B49C22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B9CB5B1C96603F00B49C22 /* AppDelegate.swift */; };
 		E4B9CB5E1C96603F00B49C22 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B9CB5D1C96603F00B49C22 /* ViewController.swift */; };
 		E4B9CB641C96603F00B49C22 /* AllBooks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4B9CB621C96603F00B49C22 /* AllBooks.xcdatamodeld */; };
@@ -50,6 +51,7 @@
 		E464FAC01C970C3D00338DA2 /* AllBooks-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AllBooks-Bridging-Header.h"; sourceTree = "<group>"; };
 		E4A3C8911CA4CC4F00D72E5B /* SelctionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelctionModel.swift; sourceTree = "<group>"; };
 		E4A3C8971CA4EB9B00D72E5B /* BookCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
+		E4B5EFE31CA8BFEB008F2AC7 /* SelectDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectDetailViewController.swift; sourceTree = "<group>"; };
 		E4B9CB581C96603F00B49C22 /* AllBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AllBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B9CB5B1C96603F00B49C22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4B9CB5D1C96603F00B49C22 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = AllBooks/ViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				E4EAC5D11C97B5D400495F19 /* SelectionViewController.swift */,
 				E4EAC5D31C97B63400495F19 /* SearchViewController.swift */,
 				E403AABE1C97C27D0004EC68 /* MWYUITabBarController.swift */,
+				E4B5EFE31CA8BFEB008F2AC7 /* SelectDetailViewController.swift */,
 			);
 			name = Controller;
 			path = ..;
@@ -403,6 +406,7 @@
 				E4A3C8981CA4EB9B00D72E5B /* BookCell.swift in Sources */,
 				E4EAC5D21C97B5D400495F19 /* SelectionViewController.swift in Sources */,
 				E4B9CB641C96603F00B49C22 /* AllBooks.xcdatamodeld in Sources */,
+				E4B5EFE41CA8BFEB008F2AC7 /* SelectDetailViewController.swift in Sources */,
 				E4B9CB5C1C96603F00B49C22 /* AppDelegate.swift in Sources */,
 				E403AABF1C97C27D0004EC68 /* MWYUITabBarController.swift in Sources */,
 				E4EAC5D01C97B59700495F19 /* DiscoverViewController.swift in Sources */,
@@ -542,6 +546,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = AllBooks/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.maweiyi.AllBooks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -560,6 +565,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = AllBooks/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.maweiyi.AllBooks;
 				PRODUCT_NAME = "$(TARGET_NAME)";

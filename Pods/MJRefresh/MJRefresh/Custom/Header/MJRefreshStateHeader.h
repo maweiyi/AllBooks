@@ -18,7 +18,6 @@
 #pragma mark - 状态相关
 /** 显示刷新状态的label */
 @property (weak, nonatomic, readonly) UILabel *stateLabel;
-//@property (weak, nonatomic) UILabel *stateLabel;
 /** 设置state状态下的文字 */
 - (void)setTitle:(NSString *)title forState:(MJRefreshState)state;
 @end

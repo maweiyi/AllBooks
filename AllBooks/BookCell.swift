@@ -23,7 +23,7 @@ class BookCell: UITableViewCell {
             make -> Void in
             make.top.equalTo(self.contentView).offset(20)
             make.left.equalTo(self.contentView).offset(20)
-            make.width.equalTo(60)
+            make.width.equalTo(45)
             make.height.equalTo(60)
             
         })

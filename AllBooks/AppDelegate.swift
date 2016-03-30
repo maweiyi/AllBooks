@@ -13,7 +13,11 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var naviControllerOne: UINavigationController?
+    var naviControllerTwo: UINavigationController?
+    var naviControllerThree: UINavigationController?
+    
+    let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -31,17 +35,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         let selectionViewController = SelectionViewController()
-        //let selectNav = UINavigationController()
-        //selectNav.viewControllers = [selectionViewController]
+        selectionViewController.title = "精选"
+        let selectNav = UINavigationController(rootViewController: selectionViewController)
+        selectNav.navigationBar.barTintColor = UIColor(red: 38/255, green: 167/255, blue: 231/255, alpha: 0.0)
+        selectNav.navigationBar.titleTextAttributes = titleDict as? [String : AnyObject]
+        
         
         
         let discoverViewController = DiscoverViewController()
-        //let discovNav = UINavigationController()
-        //discovNav.viewControllers = [discoverViewController]
+        let discovNav = UINavigationController(rootViewController: discoverViewController)
+       // discovNav.viewControllers = [discoverViewController]
         
         let searchViewController = SearchViewController()
-        //let searchNav = UINavigationController()
+        let searchNav = UINavigationController(rootViewController: searchViewController)
         //searchNav.viewControllers = [searchViewController]
+        
         
         
         let tabBarController = MWYUITabBarController()
@@ -51,10 +59,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tabBarItem2 = UITabBarItem(title: "发现", image: UIImage(named: "discover"), tag: 1)
         let tabBarItem3 = UITabBarItem(title: "搜索", image: UIImage(named: "search"), tag: 2)
         
-        selectionViewController.tabBarItem = tabBarItem1
-        discoverViewController.tabBarItem = tabBarItem2
-        searchViewController.tabBarItem = tabBarItem3
-        tabBarController.viewControllers = [selectionViewController, discoverViewController, searchViewController]
+        selectNav.tabBarItem = tabBarItem1
+        discovNav.tabBarItem = tabBarItem2
+        searchNav.tabBarItem = tabBarItem3
+        tabBarController.viewControllers = [selectNav, discovNav, searchNav]
         //tabBarController.tabBar.items = [tabBarItem1, tabBarItem2, tabBarItem3]
         
         

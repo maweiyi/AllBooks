@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (3.3.0)
+  - Kingfisher (2.2.0)
   - MBProgressHUD (0.9.2)
   - MJRefresh (3.1.0)
   - OAuthSwift (0.5.1)
@@ -8,6 +9,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 3.0)
+  - Kingfisher (~> 2.2.0)
   - MBProgressHUD (~> 0.9.2)
   - MJRefresh (~> 3.1.0)
   - OAuthSwift
@@ -16,6 +18,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: 9054db4a1b1ca9e363223183e01cea380159a27c
+  Kingfisher: 350869ed88d6451803b390475d977abdd9f0a357
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
   OAuthSwift: d63f7f329f49787319a7e35974c18b10865fe636

@@ -217,7 +217,6 @@
 {
     UILabel *label = [[self alloc] init];
     label.font = MJRefreshLabelFont;
-    //label.font = [UIFont fontWithName:@"迷你简瘦金书.ttf" size:5];
     label.textColor = MJRefreshLabelTextColor;
     label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     label.textAlignment = NSTextAlignmentCenter;
