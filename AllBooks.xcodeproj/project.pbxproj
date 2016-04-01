@@ -23,6 +23,7 @@
 		E4EAC5D01C97B59700495F19 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EAC5CF1C97B59700495F19 /* DiscoverViewController.swift */; };
 		E4EAC5D21C97B5D400495F19 /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EAC5D11C97B5D400495F19 /* SelectionViewController.swift */; };
 		E4EAC5D41C97B63400495F19 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EAC5D31C97B63400495F19 /* SearchViewController.swift */; };
+		E4FBE9B21CACF21600546634 /* DSCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FBE9B11CACF21600546634 /* DSCollectionViewLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		E4EAC5CF1C97B59700495F19 /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		E4EAC5D11C97B5D400495F19 /* SelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
 		E4EAC5D31C97B63400495F19 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		E4FBE9B11CACF21600546634 /* DSCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSCollectionViewLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,12 +117,11 @@
 		E45598141C968C0A00A4B28A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E4FBE9B01CACF19F00546634 /* Other */,
+				E4FBE9AF1CACF18600546634 /* Search */,
+				E4FBE9AE1CACF16E00546634 /* Discover */,
+				E4FBE9AD1CACF14E00546634 /* Selection */,
 				E4B9CB5D1C96603F00B49C22 /* ViewController.swift */,
-				E4EAC5CF1C97B59700495F19 /* DiscoverViewController.swift */,
-				E4EAC5D11C97B5D400495F19 /* SelectionViewController.swift */,
-				E4EAC5D31C97B63400495F19 /* SearchViewController.swift */,
-				E403AABE1C97C27D0004EC68 /* MWYUITabBarController.swift */,
-				E4B5EFE31CA8BFEB008F2AC7 /* SelectDetailViewController.swift */,
 			);
 			name = Controller;
 			path = ..;
@@ -206,6 +207,40 @@
 				E4B9CB801C96604000B49C22 /* Info.plist */,
 			);
 			path = AllBooksUITests;
+			sourceTree = "<group>";
+		};
+		E4FBE9AD1CACF14E00546634 /* Selection */ = {
+			isa = PBXGroup;
+			children = (
+				E4B5EFE31CA8BFEB008F2AC7 /* SelectDetailViewController.swift */,
+				E4EAC5D11C97B5D400495F19 /* SelectionViewController.swift */,
+			);
+			name = Selection;
+			sourceTree = "<group>";
+		};
+		E4FBE9AE1CACF16E00546634 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				E4EAC5CF1C97B59700495F19 /* DiscoverViewController.swift */,
+				E4FBE9B11CACF21600546634 /* DSCollectionViewLayout.swift */,
+			);
+			name = Discover;
+			sourceTree = "<group>";
+		};
+		E4FBE9AF1CACF18600546634 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				E4EAC5D31C97B63400495F19 /* SearchViewController.swift */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		E4FBE9B01CACF19F00546634 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				E403AABE1C97C27D0004EC68 /* MWYUITabBarController.swift */,
+			);
+			name = Other;
 			sourceTree = "<group>";
 		};
 		E766C6666237DE1799FA51DE /* Pods */ = {
@@ -407,6 +442,7 @@
 				E4EAC5D21C97B5D400495F19 /* SelectionViewController.swift in Sources */,
 				E4B9CB641C96603F00B49C22 /* AllBooks.xcdatamodeld in Sources */,
 				E4B5EFE41CA8BFEB008F2AC7 /* SelectDetailViewController.swift in Sources */,
+				E4FBE9B21CACF21600546634 /* DSCollectionViewLayout.swift in Sources */,
 				E4B9CB5C1C96603F00B49C22 /* AppDelegate.swift in Sources */,
 				E403AABF1C97C27D0004EC68 /* MWYUITabBarController.swift in Sources */,
 				E4EAC5D01C97B59700495F19 /* DiscoverViewController.swift in Sources */,
